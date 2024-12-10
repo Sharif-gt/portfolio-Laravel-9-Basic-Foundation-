@@ -6,7 +6,7 @@
         <div class="card">
             <div class="row no-gutters align-items-center">
                 <div class="col-md-4">
-                    <img class="card-img img-fluid" src=" {{asset('backend/assets/images/small/img-2.jpg')}} " alt="Card image">
+                    <img class="card-img img-fluid m-3" src=" {{asset('backend/assets/images/small/img-2.jpg')}} " alt="Card image">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -14,7 +14,7 @@
                         <h5 class="card-title">Email : {{$data->email}} </h5>
                     </div>
                 </div>
-                <a href="#"><button type="button" class="btn btn-info btn-rounded waves-effect waves-light m-3">Edit Profile</button></a>
+                <a href="{{route('edit.profile')}}"><button type="button" class="btn btn-info btn-rounded waves-effect waves-light m-3">Edit Profile</button></a>
             </div>
         </div>
     </div>

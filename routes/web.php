@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
 // admin profile
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [adminProfileController::class, 'index'])->name('profile.view');
-    // Route::get('/profile', [adminProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/edit', [adminProfileController::class, 'edit'])->name('edit.profile');
     // Route::patch('/profile', [adminProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [adminProfileController::class, 'destroy'])->name('profile.destroy');
 });

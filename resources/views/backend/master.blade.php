@@ -13,6 +13,8 @@
 
         {{-- {{asset (' backend/ ')}} --}}
 
+        <!-- jquery cdn -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <!-- jquery.vectormap css -->
         <link href="{{asset ('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
 
@@ -90,6 +92,21 @@
         <!-- Right Sidebar -->
 
         <!-- JAVASCRIPT -->
+
+        <!-- jQuery for selected image show -->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#profile_image').change(function(e){
+                    let reader = new FileReader();
+                    reader.onload = function (e){
+                        $('#image_show').attr('src',e.target.result);
+                    }
+                    reader.readAsDataURL(e.target.files[0]);
+                })
+            })
+        </script>
+         <!-- end jQuery for selected image show -->
+         
         <script src="{{asset ('backend/assets/libs/jquery/jquery.min.js')}}"></script>
         <script src="{{asset ('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset ('backend/assets/libs/metismenu/metisMenu.min.js')}}"></script>

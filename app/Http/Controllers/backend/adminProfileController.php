@@ -14,4 +14,10 @@ class adminProfileController extends Controller
         $data = User::find($id);
         return view('backend.pages.profile',compact('data'));
     }
+    
+    public function edit (){
+        $id = Auth::user()->id;
+        $data = User::find($id);
+        return view('backend.pages.profile_edit',compact('data'));
+    }
 }
