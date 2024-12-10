@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\backend\adminController;
+use App\Http\Controllers\backend\adminProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,10 +30,12 @@ Route::middleware('auth')->group(function () {
     
 });
 
+// admin profile
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [adminProfileController::class, 'index'])->name('profile.view');
+    // Route::get('/profile', [adminProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [adminProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [adminProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';
