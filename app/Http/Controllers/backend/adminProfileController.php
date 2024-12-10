@@ -20,4 +20,22 @@ class adminProfileController extends Controller
         $data = User::find($id);
         return view('backend.pages.profile_edit',compact('data'));
     }
+    
+    public function update (Request $request){
+
+        $id = Auth::user()->id;
+        $updateData = User::find($id);
+        $updateData->name = $request->name;
+        $updateData->email = $request->email;
+
+        if ($request->file('image')) {
+           $image = $request->file('image');
+           $imageName = date('Ymdhi').$image->getClientOriginalName();
+           $image->move(public_path('admin_pic'),$imageName);
+           $updateData['image'] = $imageName;
+        }
+        $updateData->save();
+
+        return redirect()->route('profile.view');
+    }
 }

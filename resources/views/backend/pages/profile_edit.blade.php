@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h4 class="card-title">Edit Your Profile</h4>
                 
-                <form class="needs-validation" method="POST" action="#">
+                <form class="needs-validation" method="POST" action="{{route('update.profile')}}" enctype="multipart/form-data">
                      @csrf
                     <div class="row">
                        <!-- Name -->
@@ -30,12 +30,13 @@
                         <div class="col-md-6">
                             <div class="mb-3 position-relative">
                                 <label for="validationTooltip02" class="form-label">Select Image</label>
-                                <input type="file" class="form-control" id="profile_image" value="Otto" required="">
+                                <input type="file" name="image" class="form-control" id="profile_image" value="" required="">
                             </div>
                         </div>
+                        <!-- Profile image show -->
                         <div class="col-md-6">
                             <div class="mb-3 position-relative">
-                                <img class="card-img img-fluid" id="image_show" src=" {{asset('backend/assets/images/small/img-2.jpg')}} " alt="Card image">
+                                <img class="card-img img-fluid" id="image_show" src="" alt="Card image">
                             </div>
                         </div>
                     </div>
