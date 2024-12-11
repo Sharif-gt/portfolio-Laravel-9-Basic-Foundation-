@@ -36,7 +36,7 @@
                         <!-- Profile image show -->
                         <div class="col-md-6">
                             <div class="mb-3 position-relative">
-                                <img class="card-img img-fluid" id="image_show" src="" alt="Card image">
+                                <img class="card-img img-fluid" id="image_show" src="{{ (!empty($data->image))?url('admin_pic/'.$data->image):url('admin_pic/image/no_img.jpg') }}" alt="Card image">
                             </div>
                         </div>
                     </div>

@@ -6,7 +6,7 @@
         <div class="card">
             <div class="row no-gutters align-items-center">
                 <div class="col-md-4">
-                    <img class="card-img img-fluid m-3" src=" {{asset('backend/assets/images/small/img-2.jpg')}} " alt="Card image">
+                    <img class="card-img img-fluid m-3" src=" {{ (!empty($data->image))?url('admin_pic/'.$data->image):url('admin_pic/image/no_img.jpg') }} " alt="Card image">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
