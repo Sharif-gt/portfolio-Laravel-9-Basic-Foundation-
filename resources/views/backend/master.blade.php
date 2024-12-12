@@ -13,8 +13,8 @@
 
         {{-- {{asset (' backend/ ')}} --}}
 
-        <!-- jquery cdn -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- toastr cdn -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
         <!-- jquery.vectormap css -->
         <link href="{{asset ('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
 
@@ -93,6 +93,9 @@
 
         <!-- JAVASCRIPT -->
 
+        <!-- jquery cdn -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
         <!-- jQuery for selected image show -->
         <script type="text/javascript">
             $(document).ready(function(){
@@ -106,6 +109,33 @@
             })
         </script>
          <!-- end jQuery for selected image show -->
+
+         <!-- toastr cdn -->
+         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+          <!-- toastr script -->
+         <script>
+            @if(Session::has('message'))
+            var type = "{{ Session::get('alert-type','info') }}"
+            switch(type){
+                case 'info':
+                toastr.info(" {{ Session::get('message') }} ");
+                break;
+
+                case 'success':
+                toastr.success(" {{ Session::get('message') }} ");
+                break;
+
+                case 'warning':
+                toastr.warning(" {{ Session::get('message') }} ");
+                break;
+
+                case 'error':
+                toastr.error(" {{ Session::get('message') }} ");
+                break; 
+            }
+            @endif 
+            </script>
          
         <script src="{{asset ('backend/assets/libs/jquery/jquery.min.js')}}"></script>
         <script src="{{asset ('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

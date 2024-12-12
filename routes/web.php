@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\backend\adminController;
 use App\Http\Controllers\backend\adminProfileController;
+use App\Http\Controllers\backend\adminPasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [adminProfileController::class, 'index'])->name('profile.view');
     Route::get('/edit', [adminProfileController::class, 'edit'])->name('edit.profile');
     Route::post('/update', [adminProfileController::class, 'update'])->name('update.profile');
+});
+
+Route::controller(adminPasswordController::class)->group(function(){
+     Route::get('/password', 'index')->name('password');
+     Route::post('/update/password', 'update')->name('update.password');
 });
 
 require __DIR__.'/auth.php';

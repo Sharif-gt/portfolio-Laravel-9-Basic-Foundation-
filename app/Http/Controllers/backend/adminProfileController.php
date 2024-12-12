@@ -35,6 +35,7 @@ class adminProfileController extends Controller
            $updateData['image'] = $imageName;
         }
         $updateData->save();
+        session()->flash('message','Profile Update Successfully');
 
         return redirect()->route('profile.view');
     }
