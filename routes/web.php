@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\backend\adminController;
 use App\Http\Controllers\backend\adminProfileController;
 use App\Http\Controllers\backend\adminPasswordController;
+use App\Http\Controllers\backend\home\sliderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,10 +38,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit', [adminProfileController::class, 'edit'])->name('edit.profile');
     Route::post('/update', [adminProfileController::class, 'update'])->name('update.profile');
 });
-
+// admin password
 Route::controller(adminPasswordController::class)->group(function(){
      Route::get('/password', 'index')->name('password');
      Route::post('/update/password', 'update')->name('update.password');
+});
+// Home section
+// Slider
+Route::controller(sliderController::class)->group(function (){
+    Route::get('/slider','index')->name('slider');
+    Route::post('/update/slider','update')->name('update.slider');
 });
 
 require __DIR__.'/auth.php';
