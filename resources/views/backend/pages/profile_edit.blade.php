@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div>
-                        <a href="#"><button class="btn btn-primary" type="submit">Submit form</button></a>
+                        <a href="#"><button class="btn btn-primary" type="submit">Edit Profile</button></a>
                     </div>
                 </form>
             </div>

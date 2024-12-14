@@ -45,7 +45,7 @@
                     </div>
                     
                     <div>
-                        <a href="#"><button class="btn btn-primary" type="submit">Submit form</button></a>
+                        <a href="#"><button class="btn btn-primary" type="submit">Change Password</button></a>
                     </div>
                 </form>
             </div>

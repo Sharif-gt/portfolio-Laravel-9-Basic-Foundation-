@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div>
-                        <a href="#"><button class="btn btn-primary" type="submit">Submit form</button></a>
+                        <a href="#"><button class="btn btn-primary" type="submit">Update Slider</button></a>
                     </div>
                 </form>
             </div>
