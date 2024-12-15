@@ -6,6 +6,7 @@ use App\Http\Controllers\backend\adminProfileController;
 use App\Http\Controllers\backend\adminPasswordController;
 use App\Http\Controllers\backend\home\sliderController;
 use App\Http\Controllers\backend\home\AboutController;
+use App\Http\Controllers\frontend\home\HomeAboutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,6 +55,10 @@ Route::controller(sliderController::class)->group(function (){
 Route::controller(AboutController::class)->group(function (){
     Route::get('/home/about','index')->name('home.about');
     Route::post('/update/about','update')->name('update.about');
+});
+//About page
+Route::controller(HomeAboutController::class)->group(function(){
+    Route::get('about','index')->name('about');
 });
 
 require __DIR__.'/auth.php';
