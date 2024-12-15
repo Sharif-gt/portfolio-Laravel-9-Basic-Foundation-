@@ -7,6 +7,7 @@ use App\Http\Controllers\backend\adminPasswordController;
 use App\Http\Controllers\backend\home\sliderController;
 use App\Http\Controllers\backend\home\AboutController;
 use App\Http\Controllers\frontend\home\HomeAboutController;
+use App\Http\Controllers\backend\home\MultiImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,13 @@ Route::controller(adminPasswordController::class)->group(function(){
      Route::get('/password', 'index')->name('password');
      Route::post('/update/password', 'update')->name('update.password');
 });
+// Multi images
+Route::controller(MultiImageController::class)->group(function (){
+    Route::get('/multi/images','index')->name('multi.images');
+    Route::get('/image/edit/{id}','view')->name('edit.image');
+    Route::post('/image/edit/{id}','delete')->name('delete.image');
+});
+
 // Home section
 // Slider
 Route::controller(sliderController::class)->group(function (){
