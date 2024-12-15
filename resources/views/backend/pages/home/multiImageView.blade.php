@@ -16,7 +16,7 @@
                         <th>Action</th>
                     </tr>
                     </thead>
-                    
+
                     <tbody>
                         @php($i=1)
                         @foreach ($images as $img)
@@ -24,8 +24,8 @@
                         <td>{{$i++}}</td>
                         <td><img src="{{asset($img->images)}}" alt="" class="rounded avatar-sm"></td>
                         <td> 
-                            <a href="{{route('edit.image',$img->id)}}"><i class=" ri-edit-2-fill m-1" title="Edit"></i></a>
-                            <a href="{{route('delete.image',$img->id)}}"><i class=" ri-delete-bin-2-fill m-1" title="Delete"></i></a>
+                            <a href="{{route('edit.image',$img->id)}}" title="Edit"><i class=" ri-edit-2-fill m-1"></i></a>
+                            <a href="{{route('delete.image',$img->id)}}" title="Delete" id="delete"><i class=" ri-delete-bin-2-fill m-1"></i></a>
                         </td>
                     </tr>
                     @endforeach
