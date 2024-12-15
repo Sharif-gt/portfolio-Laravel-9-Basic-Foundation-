@@ -32,8 +32,19 @@ class MultiImageController extends Controller
             MultiImage::findOrFail($id)->update([
                 'images' => $save,
             ]);
-            session()->flash('message','Update image successfully.');
+           session()->flash('message','Update image successfully.');
            return redirect()->route('multi.images');
         }
+    }
+
+    public function delete ($id){
+        $image = MultiImage::findOrFail($id);
+        $img = $image->images;
+        unlink($img);
+
+        MultiImage::findOrFail($id)->delete();
+
+        session()->flash('message','Image Deleted Successfully.');
+           return redirect()->back();
     }
 }

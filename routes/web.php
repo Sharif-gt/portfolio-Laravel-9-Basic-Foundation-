@@ -49,7 +49,7 @@ Route::controller(adminPasswordController::class)->group(function(){
 // Multi images
 Route::controller(MultiImageController::class)->group(function (){
     Route::get('/multi/images','index')->name('multi.images');
-    Route::get('/image/edit/{id}','view')->name('edit.image');
+    Route::get('/image/edit/{id}','view')->name('image.edit');
     Route::post('/update/multi/image','update')->name('update.multi.image');
     Route::get('/image/edit/{id}','delete')->name('delete.image');
 });
