@@ -55,6 +55,8 @@ Route::controller(sliderController::class)->group(function (){
 Route::controller(AboutController::class)->group(function (){
     Route::get('/home/about','index')->name('home.about');
     Route::post('/update/about','update')->name('update.about');
+    Route::get('/home/multi-image','view')->name('multi.image');
+    Route::post('/home/multi-image/update','insert')->name('about.image');
 });
 //About page
 Route::controller(HomeAboutController::class)->group(function(){
