@@ -33,6 +33,7 @@
                         <span>Portfolio</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('portfolio.all')}}">All Portfolio</a></li>
                         <li><a href="{{route('add.portfolio')}}">Add Portfolio</a></li>
                     </ul>
                 </li>

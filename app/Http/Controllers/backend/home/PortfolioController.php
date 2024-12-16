@@ -32,6 +32,12 @@ class PortfolioController extends Controller
             'image'=> $save_img,
         ]);
         session()->flash('message','Portfolio Add Successfully.');
-        return redirect()->back();
+        return redirect()->route('portfolio.all');
+    }
+
+    public function view (){
+
+        $data = Portfolio::latest()->get();
+        return view('backend.pages.portfolio.portfolio-all',compact('data'));
     }
 }

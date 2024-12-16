@@ -58,6 +58,9 @@ Route::controller(MultiImageController::class)->group(function (){
 Route::controller(PortfolioController::class)->group(function (){
     Route::get('/add/portfolio','index')->name('add.portfolio');
     Route::post('/portfolio/add','add')->name('portfolio.add');
+    Route::get('/portfolio/all','view')->name('portfolio.all');
+    Route::post('/edit/portfolio/{id}','update')->name('edit.portfolio');
+    Route::get('/delete/portfolio/{id}','delete')->name('delete.portfolio');
 });
 
 // Home section
