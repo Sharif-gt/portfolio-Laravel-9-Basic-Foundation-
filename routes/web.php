@@ -8,6 +8,7 @@ use App\Http\Controllers\backend\home\sliderController;
 use App\Http\Controllers\backend\home\AboutController;
 use App\Http\Controllers\frontend\home\HomeAboutController;
 use App\Http\Controllers\backend\home\MultiImageController;
+use App\Http\Controllers\backend\home\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +53,11 @@ Route::controller(MultiImageController::class)->group(function (){
     Route::get('/image/edit/{id}','view')->name('edit.image');
     Route::post('/update/multi/image','update')->name('update.multi.image');
     Route::get('/image/delete/{id}','delete')->name('delete.image');
+});
+// Portfolio
+Route::controller(PortfolioController::class)->group(function (){
+    Route::get('/add/portfolio','index')->name('add.portfolio');
+    Route::post('/portfolio/add','add')->name('portfolio.add');
 });
 
 // Home section
