@@ -24,8 +24,7 @@
                         <td>{{$i++}}</td>
                         <td><img src="{{asset($img->images)}}" alt="" class="rounded avatar-sm"></td>
                         <td> 
-                            <!-- error show -->
-                            {{-- <!-- <a href="{{route('image.edit',$img->id)}}" title="Edit"><i class="ri-edit-2-fill m-1"></i></a> --> --}}
+                            <a href="{{route('edit.image',$img->id)}}" title="Edit"><i class="ri-edit-2-fill m-1"></i></a>
                             
                             <a href="{{route('delete.image',$img->id)}}" title="Delete" id="delete"><i class="ri-delete-bin-2-fill m-1"></i></a>
                         </td>
