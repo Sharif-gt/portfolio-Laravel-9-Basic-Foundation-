@@ -77,4 +77,15 @@ class PortfolioController extends Controller
         return redirect()->route('portfolio.all');
         }
     }
+
+    public function delete ($id){
+        $image = Portfolio::findOrFail($id);
+        $img = $image->image;
+        Unlink($img);
+
+        Portfolio::findOrFail($id)->delete();
+
+        session()->flash('message','Portfolio Deleted Successfully.');
+        return redirect()->route('portfolio.all');
+    }
 }
