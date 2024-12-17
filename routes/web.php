@@ -7,6 +7,7 @@ use App\Http\Controllers\backend\adminPasswordController;
 use App\Http\Controllers\backend\home\sliderController;
 use App\Http\Controllers\backend\home\AboutController;
 use App\Http\Controllers\frontend\home\HomeAboutController;
+use App\Http\Controllers\frontend\home\HomePortfolioController;
 use App\Http\Controllers\backend\home\MultiImageController;
 use App\Http\Controllers\backend\home\PortfolioController;
 use Illuminate\Support\Facades\Route;
@@ -62,6 +63,10 @@ Route::controller(PortfolioController::class)->group(function (){
     Route::get('/edit/portfolio/{id}','edit')->name('edit.portfolio');
     Route::post('/update/portfolio/','update')->name('update.portfolio');
     Route::get('/delete/portfolio/{id}','delete')->name('delete.portfolio');
+});
+
+Route::controller(HomePortfolioController::class)->group(function (){
+    Route::get('/portfolio/details/{id}','view')->name('portfolio.details');
 });
 
 // Home section
