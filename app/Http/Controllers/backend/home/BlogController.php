@@ -45,4 +45,51 @@ class BlogController extends Controller
         session()->flash('message','Create blog Successfully.');
         return redirect()->route('all.blog');
     }
+
+    public function edit ($id){
+        $data = blog::findOrFail($id);
+        $category = Category::orderBy('name','ASC')->get();
+        return view('backend.pages.blog.edit-blog',compact('data','category'));
+    }
+
+    public function update (Request $request, $id){
+        if (($request->file('image'))) {
+            $image = $request->file('image');
+            $img_name = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(1020,519)->save('upload/blog/'.$img_name);
+            $save_img = 'upload/blog/'.$img_name;
+
+        blog::findOrFail($id)->update([
+            'name'=> $request->name,
+            'categorie_id'=> $request->categorie_id,
+            'long_description'=> $request->long_description,
+            'tag'=> $request->tag,
+            'image'=> $save_img,
+        ]);
+
+        session()->flash('message','Blog Update Successfully.');
+        return redirect()->route('all.blog');
+        }else {
+            blog::findOrFail($id)->update([
+            'name'=> $request->name,
+            'categorie_id'=> $request->categorie_id,
+            'long_description'=> $request->long_description,
+            'tag'=> $request->tag,
+        ]);
+
+        session()->flash('message','Blog Update Successfully.');
+        return redirect()->route('all.blog');
+        }
+    }
+
+    public function delete ($id){
+        $image = blog::findOrFail($id);
+        $img = $image->image;
+        Unlink($img);
+
+        blog::findOrFail($id)->delete();
+
+        session()->flash('message','Blog Deleted Successfully.');
+        return redirect()->route('all.blog');
+    }
 }

@@ -86,6 +86,9 @@ Route::controller(BlogController::class)->group(function (){
     Route::get('/blog/all','view')->name('all.blog');
     Route::get('/blog/add','add')->name('add.blog');
     Route::post('/create/blog','create')->name('create.blog');
+    Route::get('/edit/blog/{id}','edit')->name('edit.blog');
+    Route::post('/update/blog/{id}','update')->name('update.blog');
+    Route::get('/delete/blog/{id}','delete')->name('delete.blog');
 });
 
 // Home section

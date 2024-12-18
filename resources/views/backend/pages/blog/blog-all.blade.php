@@ -30,9 +30,9 @@
                         <td><img src="{{asset($data->image)}}" alt="" class="rounded avatar-sm"></td>
                         <td>{{$data->tag}}</td>
                         <td> 
-                            <a href="{{route('edit.portfolio',$data->id)}}" title="Edit"><i class="ri-edit-2-fill m-1"></i></a>
+                            <a href="{{route('edit.blog',$data->id)}}" title="Edit"><i class="ri-edit-2-fill m-1"></i></a>
                             
-                            <a href="{{route('delete.portfolio',$data->id)}}" title="Delete" id="delete"><i class="ri-delete-bin-2-fill m-1"></i></a>
+                            <a href="{{route('delete.blog',$data->id)}}" title="Delete" id="delete"><i class="ri-delete-bin-2-fill m-1"></i></a>
                         </td>
                     </tr>
                     @endforeach
