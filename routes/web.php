@@ -8,6 +8,7 @@ use App\Http\Controllers\backend\home\sliderController;
 use App\Http\Controllers\backend\home\AboutController;
 use App\Http\Controllers\frontend\home\HomeAboutController;
 use App\Http\Controllers\frontend\home\HomePortfolioController;
+use App\Http\Controllers\frontend\home\HomeBlogController;
 use App\Http\Controllers\backend\home\MultiImageController;
 use App\Http\Controllers\backend\home\PortfolioController;
 use App\Http\Controllers\backend\home\BlogCategoryController;
@@ -107,6 +108,11 @@ Route::controller(AboutController::class)->group(function (){
 //About page
 Route::controller(HomeAboutController::class)->group(function(){
     Route::get('about','index')->name('about');
+});
+
+//blog page
+Route::controller(HomeBlogController::class)->group(function(){
+    Route::get('blog/{id}','index')->name('blog.details');
 });
 
 require __DIR__.'/auth.php';
