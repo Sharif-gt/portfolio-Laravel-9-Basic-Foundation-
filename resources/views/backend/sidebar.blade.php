@@ -38,15 +38,16 @@
                     </ul>
                 </li>
 
-                <li class="menu-title">Pages</li>
+                <li class="menu-title">Blog</li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-account-circle-line"></i>
-                        <span>Authentication</span>
+                        <i class="ri-mail-send-line"></i>
+                        <span>Category</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="auth-login.html">Login</a></li>
+                        <li><a href="{{route('all.category')}}">All Category</a></li>
+                        <li><a href="{{route('add.category')}}">Add Category</a></li>
                     </ul>
                 </li>
 
