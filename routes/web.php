@@ -11,6 +11,7 @@ use App\Http\Controllers\frontend\home\HomePortfolioController;
 use App\Http\Controllers\backend\home\MultiImageController;
 use App\Http\Controllers\backend\home\PortfolioController;
 use App\Http\Controllers\backend\home\BlogCategoryController;
+use App\Http\Controllers\backend\home\BlogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,6 +70,7 @@ Route::controller(PortfolioController::class)->group(function (){
 Route::controller(HomePortfolioController::class)->group(function (){
     Route::get('/portfolio/details/{id}','view')->name('portfolio.details');
 });
+
 // Blog category
 Route::controller(BlogCategoryController::class)->group(function (){
     Route::get('/category/all','view')->name('all.category');
@@ -77,6 +79,13 @@ Route::controller(BlogCategoryController::class)->group(function (){
     Route::get('/edit/category/{id}','edit')->name('edit.category');
     Route::post('/update/category/{id}','update')->name('update.category');
     Route::get('/delete/category/{id}','delete')->name('delete.category');
+});
+
+// Blog
+Route::controller(BlogController::class)->group(function (){
+    Route::get('/blog/all','view')->name('all.blog');
+    Route::get('/blog/add','add')->name('add.blog');
+    Route::post('/create/blog','create')->name('create.blog');
 });
 
 // Home section

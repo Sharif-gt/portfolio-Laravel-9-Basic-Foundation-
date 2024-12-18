@@ -6,16 +6,16 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="card-title mb-4">All Portfolio</h4>
+                <h4 class="card-title mb-4">Blogs</h4>
 
                 <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                     <tr>
                         <th>Sl</th>
                         <th>Name</th>
-                        <th>Title</th>
+                        <th>Categorie Id</th>
                         <th>Image</th>
-                        <th>Long Description</th>
+                        <th>Tags</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -26,9 +26,9 @@
                     <tr>
                         <td>{{$i++}}</td>
                         <td>{{$data->name}}</td>
-                        <td class="text-wrap">{{$data->title}}</td>
+                        <td>{{$data['category']['name']}}</td>
                         <td><img src="{{asset($data->image)}}" alt="" class="rounded avatar-sm"></td>
-                        <td class="text-wrap">{!!$data->long_description!!}</td>
+                        <td>{{$data->tag}}</td>
                         <td> 
                             <a href="{{route('edit.portfolio',$data->id)}}" title="Edit"><i class="ri-edit-2-fill m-1"></i></a>
                             
