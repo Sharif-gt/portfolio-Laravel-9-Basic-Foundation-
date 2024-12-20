@@ -112,7 +112,9 @@ Route::controller(HomeAboutController::class)->group(function(){
 
 //blog page
 Route::controller(HomeBlogController::class)->group(function(){
-    Route::get('blog/{id}','index')->name('blog.details');
+    Route::get('blog/details/{id}','index')->name('blog.details');
+    Route::get('category/blog/{id}','catblog')->name('category.blog');
+    Route::get('all/blogs','allablog')->name('blogs.all');
 });
 
 require __DIR__.'/auth.php';

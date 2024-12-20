@@ -10,7 +10,7 @@
             <div class="col-lg-4 col-md-6 col-sm-9">
                 <div class="blog__post__item">
                     <div class="blog__post__thumb">
-                        <a href="blog-details.html"><img src="{{ asset($item->image)}}" alt=""></a>
+                        <a href="blog-details.html"><img src="{{asset($item->image)}}" alt=""></a>
                         <div class="blog__post__tags">
                             <a href="blog.html">{{$item['category']['name']}}</a>
                         </div>

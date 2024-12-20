@@ -17,4 +17,23 @@ class HomeBlogController extends Controller
         $category = Category::latest()->limit(7)->get();
         return view('frontend.home.blog-details',compact('data','images','blog','category'));
     }
+
+    public function catblog ($id){
+        $categoryBlog = blog::where('categorie_id',$id)->orderBy('id','DESC')->get();
+        $categoryName = Category::findOrFail($id);
+        $images = MultiImage::get()->all();
+        $blog = blog::latest()->limit(6)->get();
+        $category = Category::latest()->limit(7)->get();
+        
+        return view('frontend.home.category-blog',compact('categoryBlog','categoryName','images','blog','category'));
+    }
+
+    public function allablog (){
+        $images = MultiImage::get()->all();
+        $allBlogs = blog::latest()->orderBy('id','DESC')->get();
+        $blog = blog::latest()->limit(6)->get();
+        $category = Category::latest()->limit(7)->get();
+
+        return view('frontend.home.all-blogs',compact('images','allBlogs','blog','category'));
+    }
 }

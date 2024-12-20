@@ -36,7 +36,7 @@
             <div class="col-lg-8">
                 <div class="standard__blog__post">
                     <div class="standard__blog__thumb">
-                        <img src="assets/img/blog/blog_thumb01.jpg" alt="">
+                        <img src="{{asset($data->image)}}" alt="">
                     </div>
                     <div class="blog__details__content services__details__content">
                         <ul class="blog__post__meta">
@@ -203,10 +203,10 @@
                             @foreach ($blog as $blog)
                             <li class="rc__post__item">
                                 <div class="rc__post__thumb">
-                                    <a href="blog-details.html"><img src="{{asset($blog->image)}}" alt=""></a>
+                                    <a href="{{route('blog.details',$blog->id)}}"><img src="{{asset($blog->image)}}" alt=""></a>
                                 </div>
                                 <div class="rc__post__content">
-                                    <h5 class="title"><a href="blog-details.html">{{$blog->name}}</a></h5>
+                                    <h5 class="title"><a href="{{route('blog.details',$blog->id)}}">{{$blog->name}}</a></h5>
                                     <span class="post-date"><i class="fal fa-calendar-alt"></i>{{Carbon\Carbon::parse($item->created_at)->diffForHumans()}}</span>
                                 </div>
                             </li>
@@ -217,7 +217,7 @@
                         <h4 class="widget-title">Categories</h4>
                         <ul class="sidebar__cat">
                             @foreach ($category as $cat)
-                            <li class="sidebar__cat__item"><a href="blog.html">{{$cat->name}}</a></li>
+                            <li class="sidebar__cat__item"><a href="{{route('category.blog',$cat->id)}}">{{$cat->name}}</a></li>
                             @endforeach
                         </ul>
                     </div>
